@@ -76,6 +76,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
 
 # IPython
 profile_default/
@@ -128,6 +129,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Datsets and Notebooks
+# Datsets
 DATASET/
-*.ipynb
+
+# Jet Brains
+.idea/
