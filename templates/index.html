@@ -5,87 +5,43 @@
     <meta charset="UTF-8">
     <title>Book Recommender System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
 <body style="background-color: black">
 
-    <nav class="navbar" style="background-color: #00a65a">
-        <a class="navbar-brand">My Book Recommender</a>
-        <ul class="nav navbar-nav">
-            <li><a>Home</a></li>
-            <li><a>Recommend</a></li>
-            <li><a>Contact</a></li>
-        </ul>
-    </nav>
+<nav class="navbar" style="background-color: #00a65a">
+    <a class="navbar-brand">My Book Recommender</a>
+    <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/recommend">Recommend</a></li>
+        <li><a>Contact</a></li>
+    </ul>
+</nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="text-white" style="font-size: 50px;">Top 50 Books</h1>
-            </div>
-
-            <div class="col-md-3" style="margin: 30px;">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="" class="card-img-top">
-                        <h2>Harry Potter</h2>
-                        <p>J K Rowling</p>
-                        <p>Votes - 300</p>
-                        <p>Rating - 5.6</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="margin: 30px;">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="" class="card-img-top">
-                        <h2>Harry Potter</h2>
-                        <p>J K Rowling</p>
-                        <p>Votes - 300</p>
-                        <p>Rating - 5.6</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="margin: 30px;">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="" class="card-img-top">
-                        <h2>Harry Potter</h2>
-                        <p>J K Rowling</p>
-                        <p>Votes - 300</p>
-                        <p>Rating - 5.6</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="margin: 30px;">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="" class="card-img-top">
-                        <h2>Harry Potter</h2>
-                        <p>J K Rowling</p>
-                        <p>Votes - 300</p>
-                        <p>Rating - 5.6</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3" style="margin: 30px;">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="" class="card-img-top">
-                        <h2>Harry Potter</h2>
-                        <p>J K Rowling</p>
-                        <p>Votes - 300</p>
-                        <p>Rating - 5.6</p>
-                    </div>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-white" style="font-size: 50px;">Top 50 Books</h1>
         </div>
+
+        {% for i in range(book_name|length) %}
+            <div class="col-md-3" style="margin: 30px;">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ image[i] }}"
+                             class="card-img-top" alt="">
+                        <p>{{ book_name[i] }}</p>
+                        <p>{{ author[i] }}</p>
+                        <p>Votes - {{ votes[i] }}</p>
+                        <p>Rating - {{ rating[i] }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
     </div>
+</div>
 </body>
 
 </html>
